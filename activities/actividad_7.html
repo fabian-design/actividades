@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACTIVIDAD_7 | Estructura HTML - Sneaker Shop</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f5f9;
+      color: #20283a;
+    }
+    header {
+      background: #172554;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header h1 { margin: 0 0 8px; letter-spacing: .5px; }
+    header p { margin: 0; color: #dbeafe; line-height: 1.5; }
+    main { max-width: 1250px; margin: auto; padding: 28px 18px 50px; }
+    .bloque {
+      background: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 16px #17255414;
+      min-width: 0;
+      margin-bottom: 24px;
+    }
+    h2 { color: #172554; margin: 0 0 16px; }
+    .enunciado { line-height: 1.65; }
+    .enunciado p { margin: 0 0 13px; }
+    code {
+      background: #e2e8f0;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: Consolas, "Courier New", monospace;
+    }
+    .referencias { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    figure {
+      margin: 0;
+      padding: 12px;
+      border: 1px solid #dbe3ef;
+      border-radius: 9px;
+      background: #f8fafc;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 1100px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 6px;
+    }
+    figcaption {
+      color: #475569;
+      font-size: .9rem;
+      line-height: 1.4;
+      padding-top: 10px;
+      font-weight: 600;
+    }
+    .nota {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 12px 15px;
+      border-radius: 5px;
+      line-height: 1.55;
+      margin-top: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 22px 20px;
+      color: #64748b;
+      font-size: .9rem;
+      border-top: 1px solid #e2e8f0;
+      line-height: 1.7;
+    }
+    @media (max-width: 800px) {
+      .bloque { padding: 19px; }
+      figure img { max-height: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ACTIVIDAD_7</h1>
+    <p>HTML · Estructura del archivo index.html · Proyecto Sneaker Shop</p>
+  </header>
+
+  <main>
+    <section class="bloque enunciado">
+      <h2>Actividad: Crear la estructura HTML de una galería de productos</h2>
+
+      <p>En esta actividad vamos a construir la estructura HTML de una sección de productos para el proyecto
+        <strong>Sneaker Shop</strong>. El objetivo es organizar correctamente los elementos mediante etiquetas
+        semánticas y contenedores anidados.</p>
+
+      <p>Comenzá creando una sección con el identificador <code>products</code>. Dentro de ella agregá una lista
+        desordenada <code>ul</code> con la clase <code>gallery</code>. Cada elemento de la lista (<code>li</code>)
+        debe contener un contenedor <code>div</code> con la clase <code>box</code>.</p>
+
+      <p>Dentro de cada contenedor <code>box</code>, incorporá un elemento <code>figure</code>. Este elemento agrupará
+        la imagen del producto (<code>img</code>) y su descripción mediante <code>figcaption</code>.</p>
+
+      <p>Dentro de <code>figcaption</code> agregá un título <code>h3</code> para la descripción o nombre del producto,
+        un párrafo <code>p</code> para mostrar el precio y un elemento <code>time</code> para indicar la fecha.</p>
+
+      <p><strong>Consigna:</strong> observá la imagen de referencia y escribí el código HTML respetando el orden,
+        la jerarquía y el anidamiento de todas las etiquetas. Utilizá los atributos <code>id</code>, <code>class</code>,
+        <code>src</code> y <code>alt</code> donde corresponda.</p>
+
+      <div class="nota"><strong>Importante:</strong> cada etiqueta debe cerrarse correctamente y permanecer dentro
+        del elemento que le corresponde. Recordá que <code>figcaption</code> contiene el título, el precio y la fecha;
+        no reemplaza las etiquetas específicas de cada contenido.</div>
+    </section>
+
+    <section class="bloque">
+      <h2>Imagen de referencia</h2>
+      <div class="referencias">
+        <figure>
+          <img src="/actividades/images/image_7/01_estructura_sneaker_shop.png"
+               alt="Esquema manuscrito de la estructura HTML de la sección products para Sneaker Shop">
+          <figcaption>Estructura anidada de section, ul, li, div, figure, img y figcaption.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="fecha"></div>
+    <div>© <span id="anio"></span> Fabian Ameneiros · Analista en Informática</div>
+  </footer>
+
+  <script>
+    const ahora = new Date();
+    const opcionesFecha = { day: "2-digit", month: "2-digit", year: "numeric" };
+    document.getElementById("fecha").textContent =
+      "Fecha: " + ahora.toLocaleDateString("es-AR", opcionesFecha);
+    document.getElementById("anio").textContent = ahora.getFullYear();
+  </script>
+</body>
+</html>
